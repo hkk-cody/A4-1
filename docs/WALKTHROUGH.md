@@ -460,7 +460,7 @@ parser.add_argument("--topk", type=int, default=5)
 
 | 증상 | 원인 | 해결 |
 | --- | --- | --- |
-| sklearn과 shape가 다름 | sklearn이 내부 토큰화/소문자화를 함 | `analyzer` 또는 `tokenizer` + `token_pattern=None`으로 같은 토큰 사용 |
+| sklearn과 shape가 다름 | sklearn이 내부 토큰화/소문자화를 함 | `analyzer` 또는 `tokenizer` + `lowercase=False` + `token_pattern=None`으로 같은 토큰 사용 |
 | shape는 같은데 오차가 0.1 이상 | 열 순서가 다름 | 어휘집을 정렬하거나 `vocabulary=` 지정 |
 | 오차가 일정한 비율로 어긋남 | 로그 밑, smooth 식, `+1` 누락 | 자연로그와 sklearn IDF 식 확인 |
 | `RuntimeWarning: divide by zero` | 빈 문서나 OOV 쿼리의 노름이 0 | 노름이 0인 행은 나누지 않음 |
